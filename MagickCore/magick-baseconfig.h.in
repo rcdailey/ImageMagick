@@ -1,0 +1,5 @@
+// exclude deprecated methods in MagickCore API
+#cmakedefine MAGICKCORE_ENABLE_DEPRECATED 1
+
+// Define if you have POSIX threads libraries and header files
+#cmakedefine MAGICKCORE_THREAD_SUPPORT 1
