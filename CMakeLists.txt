@@ -12,4 +12,13 @@ include_directories(
     ${CMAKE_BINARY_DIR}
 )
 
+if(MSVC)
+    # Preprocessor definitions that we want to affect all Magick targets, but should be private
+    # (i.e. not exported in install targets). Other downstream targets that depend on ImageMagick
+    # should not inherit these.
+    add_definitions(
+        -D_CRT_SECURE_NO_WARNINGS
+    )
+endif()
+
 add_subdirectory(MagickCore)
